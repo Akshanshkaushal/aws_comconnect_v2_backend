@@ -130,7 +130,8 @@ const startServer = async () => {
     const io = require("socket.io")(server, {
       pingTimeout: 60000,
       cors: {
-        origin: process.env.CORS_ORIGIN || "http://localhost:3000" || "https://com-connect.vercel.app" || "https://com-connect.vercel.app/" ||  "https://com-connect-2rjqyk02d-specniths-projects.vercel.app",
+         origin: "*",
+        // origin: process.env.CORS_ORIGIN || "http://localhost:3000" || "https://com-connect.vercel.app" || "https://com-connect.vercel.app/" ||  "https://com-connect-2rjqyk02d-specniths-projects.vercel.app",
         methods: ["GET", "POST"],
         credentials: true,
         allowedHeaders: ['Content-Type', 'Authorization']
