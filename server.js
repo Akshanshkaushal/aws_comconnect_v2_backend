@@ -54,7 +54,7 @@ const app = express();
 
 // Configure CORS with more detailed options
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || "http://localhost:3000" || "https://com-connect.vercel.app/",
+  origin: process.env.CORS_ORIGIN || "http://localhost:3000" || "https://com-connect.vercel.app",
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   credentials: true,
   allowedHeaders: ['Content-Type', 'Authorization']
@@ -128,7 +128,7 @@ const startServer = async () => {
     const io = require("socket.io")(server, {
       pingTimeout: 60000,
       cors: {
-        origin: process.env.CORS_ORIGIN || "http://localhost:3000" || "https://com-connect.vercel.app/",
+        origin: process.env.CORS_ORIGIN || "http://localhost:3000" || "https://com-connect.vercel.app",
         methods: ["GET", "POST"],
         credentials: true,
         allowedHeaders: ['Content-Type', 'Authorization']
