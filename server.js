@@ -53,12 +53,14 @@ console.log('Environment Variables:', {
 const app = express();
 
 // Configure CORS with more detailed options
-app.use(cors({
-  origin: process.env.CORS_ORIGIN || "http://localhost:3000" || "https://com-connect.vercel.app" || "https://com-connect.vercel.app/" || "https://com-connect-2rjqyk02d-specniths-projects.vercel.app",
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  credentials: true,
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
+// app.use(cors({
+//   origin: process.env.CORS_ORIGIN || "http://localhost:3000" || "https://com-connect.vercel.app" || "https://com-connect.vercel.app/" || "https://com-connect-2rjqyk02d-specniths-projects.vercel.app",
+//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+//   credentials: true,
+//   allowedHeaders: ['Content-Type', 'Authorization']
+// }));
+
+app.use(cors());
 
 app.use(express.json());
 
